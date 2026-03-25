@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>International H1 2026 Strategy</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark: #0f0f1a;
+      --dark2: #1a1a2e;
+      --accent: #5c6bc0;
+      --accent2: #7986cb;
+      --text: #1a1a2e;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --bg: #f9fafb;
+      --white: #ffffff;
+
+      --bet1: #5c6bc0;
+      --bet2: #00897b;
+      --bet3: #e65100;
+      --bet4: #6a1b9a;
+      --bet5: #1565c0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    .hero {
+      background: var(--dark);
+      color: white;
+      padding: 64px 40px 56px;
+    }
+    .hero-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .hero-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 24px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 32px;
+    }
+    .hero-team {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+      line-height: 1.7;
+    }
+    .hero-team strong {
+      color: rgba(255,255,255,0.7);
+      font-weight: 500;
+    }
+
+    /* LAYOUT */
+    .content {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 40px 80px;
+    }
+
+    /* SECTIONS */
+    .section {
+      margin-top: 56px;
+    }
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .section h2 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+    }
+
+    /* TL;DR BLOCK */
+    .tldr-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .tldr-item {
+      background: var(--white);
+      padding: 24px 28px;
+    }
+    .tldr-item h3 {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .tldr-item p {
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--text);
+    }
+
+    /* GOALS */
+    .goals-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 640px) { .goals-grid { grid-template-columns: 1fr; } }
+
+    .goals-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .goal-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
+    }
+    .goal-num {
+      flex-shrink: 0;
+      width: 26px;
+      height: 26px;
+      background: var(--dark);
+      color: white;
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .goal-item p {
+      font-size: 14px;
+      line-height: 1.5;
+      margin-top: 2px;
+    }
+
+    .audiences-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+    }
+    .audiences-box h3 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .audience-tag {
+      display: inline-block;
+      font-size: 13px;
+      padding: 6px 12px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      margin: 0 6px 8px 0;
+    }
+
+    /* HERO NARRATIVES */
+    .narratives-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .narrative-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      padding: 20px 24px;
+    }
+    .narrative-item h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .narrative-item p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* BIG BETS */
+    .bets-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .bet-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .bet-header {
+      padding: 20px 28px 16px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .bet-num {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .bet-header h3 {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .bet-body {
+      padding: 20px 28px 24px;
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 28px;
+    }
+    @media (max-width: 700px) { .bet-body { grid-template-columns: 1fr; } }
+
+    .bet-plays h4 {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    .bet-plays ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .bet-plays ul li {
+      font-size: 14px;
+      line-height: 1.55;
+      padding-left: 16px;
+      position: relative;
+      color: var(--text);
+    }
+    .bet-plays ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .bet-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .bet-success {
+      background: var(--bg);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .bet-success h4 {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .bet-success p {
+      font-size: 13px;
+      line-height: 1.55;
+      color: var(--text);
+    }
+    .bet-scale {
+      background: var(--bg);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .bet-scale h4 {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .bet-scale p {
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--text);
+    }
+
+    /* CROSS-FUNCTIONAL */
+    .xfn-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .xfn-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+    }
+    .xfn-card h3 {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .xfn-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .xfn-card ul li {
+      font-size: 13px;
+      color: var(--muted);
+      padding-left: 12px;
+      position: relative;
+    }
+    .xfn-card ul li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: var(--dark2);
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      font-size: 12px;
+      padding: 24px;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">INTL Comms &amp; Public Affairs</div>
+    <h1>International H1 2026 Strategy</h1>
+    <div class="hero-meta">
+      <span>Last updated March 23, 2026</span>
+      <span>H1 2026 Plan</span>
+    </div>
+    <div class="hero-team">
+      <strong>Team:</strong> Alice Smith (APAC) &nbsp;·&nbsp; Dave Ross-Tomlin &amp; Pia Schratzenstaller (EMEA Comms) &nbsp;·&nbsp; Fabian Ladda-Henry (EMEA GA) &nbsp;·&nbsp; Kostas Rossoglou (EMEA &amp; APAC GA)
+    </div>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- TL;DR -->
+  <div class="section">
+    <div class="section-label">TL;DR</div>
+    <div class="tldr-grid">
+      <div class="tldr-item">
+        <h3>Who</h3>
+        <p>Comms steers Shopify's story across earned, owned, shared, and paid channels across 7 international markets. GA drives policy engagement and reduces regulatory friction across the EU, UK, and key APAC markets.</p>
+      </div>
+      <div class="tldr-item">
+        <h3>What</h3>
+        <p><strong>Comms:</strong> Position Shopify as the product-led company powering commerce for entrepreneurs and enterprises, laddering up to the H1 priorities.<br><br><strong>GA:</strong> Translate those priorities into policy positions and advocacy that reduces regulatory friction, defends merchant interests, and builds Shopify's political equity.</p>
+      </div>
+      <div class="tldr-item">
+        <h3>Why</h3>
+        <p><strong>Comms:</strong> Cement Shopify's AI narrative, showcase product strength, and highlight merchant and partner impact in growth markets.<br><br><strong>GA:</strong> Europe is the most complex regulatory environment for digital commerce. Policy decisions in H1 2026 will determine whether merchants can scale efficiently.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- GOALS & AUDIENCES -->
+  <div class="section">
+    <div class="section-label">Goals &amp; Audiences</div>
+    <div class="goals-grid">
+      <div class="goals-list">
+        <div class="goal-item">
+          <div class="goal-num">1</div>
+          <p>Raise awareness of Shopify as the all-in-one commerce platform AND the foundation of agentic commerce</p>
+        </div>
+        <div class="goal-item">
+          <div class="goal-num">2</div>
+          <p>Build trust with decision-makers through product excellence and innovation</p>
+        </div>
+        <div class="goal-item">
+          <div class="goal-num">3</div>
+          <p>Show up locally with a market-specific voice and storytelling to build credibility</p>
+        </div>
+        <div class="goal-item">
+          <div class="goal-num">4</div>
+          <p>Shape the regulatory environment to enable entrepreneurship &amp; reduce barriers for merchants</p>
+        </div>
+        <div class="goal-item">
+          <div class="goal-num">5</div>
+          <p>Build Shopify's political equity with policymakers and regulators</p>
+        </div>
+      </div>
+      <div class="audiences-box">
+        <h3>Audiences</h3>
+        <div>
+          <span class="audience-tag">Entrepreneurs</span>
+          <span class="audience-tag">Merchants</span>
+          <span class="audience-tag">Partners</span>
+          <span class="audience-tag">Key opinion leaders</span>
+          <span class="audience-tag">Policy stakeholders</span>
+        </div>
+        <p style="font-size:13px;color:#6b7280;margin-top:16px;line-height:1.6">Aspiring and early-stage founders · Current Shopify merchants and high-value prospects · Agencies, app developers, SIs · Analysts, creators, industry voices · Government, regulators, trade bodies</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO NARRATIVES -->
+  <div class="section">
+    <div class="section-label">Global Hero Narratives</div>
+    <div class="narratives-list">
+      <div class="narrative-item">
+        <h3>Shopify makes entrepreneurship more common</h3>
+        <p>Fundamentally, we believe more entrepreneurs make the world a better place. Shopify champions entrepreneurship and supports every entrepreneur, big or small.</p>
+      </div>
+      <div class="narrative-item">
+        <h3>Shopify is built for the complexity of commerce</h3>
+        <p>Merchants bet on Shopify to build the future, because we're the most unified platform and we innovate faster than anyone else. With millions of merchants and billions of transactions processed, no platform understands commerce diversity like Shopify.</p>
+      </div>
+      <div class="narrative-item">
+        <h3>Shopify is the foundation of agentic commerce</h3>
+        <p>We've spent decades building the infrastructure that lets businesses thrive, taking raw technological power and turning it into tools for millions of merchants. Now we're extending that foundation into the AI era.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- H1 PRIORITIES / BIG BETS -->
+  <div class="section">
+    <div class="section-label">H1 Priorities</div>
+    <h2>5 Big Bets</h2>
+    <div class="bets-list">
+
+      <!-- BET 1 -->
+      <div class="bet-card">
+        <div class="bet-header">
+          <div class="bet-num" style="background:var(--bet1)">1</div>
+          <h3>Land our differentiated AI story</h3>
+        </div>
+        <div class="bet-body">
+          <div class="bet-plays">
+            <h4>Big plays</h4>
+            <ul>
+              <li>Agentic commerce sustained storytelling — cross-market outreach framing AI in practical, merchant-first terms (podcasts, op-eds, thought leadership)</li>
+              <li>Executive positioning — 2–3 speaker slots per region (Shoptalk Luxe ✅ / MPE ✅ / Stop Forward ✅ / Reuters AI Momentum 🎯)</li>
+              <li>AI Commerce Index &amp; Heatmap — show where Sidekick usage is clustering and prove adoption is growing</li>
+              <li>Proactive myth-busting advocacy — demystify agentic commerce for policymakers; position it as SME infrastructure, not Big Tech</li>
+            </ul>
+          </div>
+          <div class="bet-meta">
+            <div class="bet-success">
+              <h4>What success looks like</h4>
+              <p>Shopify is recognised as the leader in AI and agentic commerce. Coverage connects Sidekick, Agentic Storefronts, and other AI products to real merchant outcomes.</p>
+            </div>
+            <div class="bet-scale">
+              <h4>Scale</h4>
+              <p>~25 earned placements · 10–12 briefings · ~12 shared/owned pieces · 4 speaking engagements · 8 merchant stories</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BET 2 -->
+      <div class="bet-card">
+        <div class="bet-header">
+          <div class="bet-num" style="background:var(--bet2)">2</div>
+          <h3>Amp up product storytelling</h3>
+        </div>
+        <div class="bet-body">
+          <div class="bet-plays">
+            <h4>Big plays</h4>
+            <ul>
+              <li>Winter Edition '26 (Q1) — momentum storytelling targeting earned + podcast placements across markets ✅</li>
+              <li>Spring Edition '26 (29 April) — integrated, cross-channel launch: hero product deep-dives, strategic reach, local spokesperson thought leadership</li>
+              <li>Shopify's security story — proactive pitching of Dunbar to key security media and podcasts internationally (The Control Layer ✅)</li>
+            </ul>
+          </div>
+          <div class="bet-meta">
+            <div class="bet-success">
+              <h4>What success looks like</h4>
+              <p>Shopify shifts perception from "the entrepreneurship company" to also being "the product company." Coverage reflects platform depth and deep understanding of the complexity of commerce.</p>
+            </div>
+            <div class="bet-scale">
+              <h4>Scale</h4>
+              <p>~12 earned placements · 8–10 briefings · ~6 shared/owned pieces · 4 merchant stories</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BET 3 -->
+      <div class="bet-card">
+        <div class="bet-header">
+          <div class="bet-num" style="background:var(--bet3)">3</div>
+          <h3>Directly advocate for Shopify + merchants</h3>
+        </div>
+        <div class="bet-body">
+          <div class="bet-plays">
+            <h4>Big plays</h4>
+            <ul>
+              <li>Advocacy (lead) — direct engagement with EU institutions, UK DBT, and capitals on core priorities: Entrepreneurship, AI &amp; agentic, Privacy &amp; cookies, Trade, Platform liability, Payments</li>
+              <li>Scale influence — leverage policy coalitions; own key policy moments (roundtables, SME forums, embassy engagement)</li>
+              <li>Amplify through comms — issues hijacking with fast, opinionated reactions to government policy moves on trade, regulation, and AI</li>
+              <li>Merchant storytelling — profile standout merchants (e.g. Cabaia in FR, DFYNE &amp; Jaded London in UK)</li>
+            </ul>
+          </div>
+          <div class="bet-meta">
+            <div class="bet-success">
+              <h4>What success looks like</h4>
+              <p>Shopify recognised as the best place to build. Shape the rules of agentic commerce &amp; cross-border trade; position entrepreneurship as essential economic infrastructure.</p>
+            </div>
+            <div class="bet-scale">
+              <h4>Scale</h4>
+              <p>~60 stakeholder meetings · ~40 policy consultations · 5 roundtables · ~18 earned placements · 4–6 briefings · ~16 shared/owned pieces · 10 merchant stories</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BET 4 -->
+      <div class="bet-card">
+        <div class="bet-header">
+          <div class="bet-num" style="background:var(--bet4)">4</div>
+          <h3>Own the entrepreneur-to-enterprise story</h3>
+        </div>
+        <div class="bet-body">
+          <div class="bet-plays">
+            <h4>Big plays</h4>
+            <ul>
+              <li>Sustained thought leadership — constant drumbeat of exec thought leadership across earned media (Business Builders ✅ / Dolcesalato ✅ + targets: Sifted Summit, Enterprise Times, Il Caffettino, RetailBiz, Der Handel)</li>
+              <li>Pulse surveys (quarterly) — leverage Harris Poll insights for media opportunities, paired with proactive commentary from Deann &amp; Shaun</li>
+              <li>INTL Uncertainty campaign — support milestone campaign; explore report-led campaign unpacking the uncertainty narrative with local nuances for 3–6 months of earned, owned, and paid activation</li>
+            </ul>
+          </div>
+          <div class="bet-meta">
+            <div class="bet-success">
+              <h4>What success looks like</h4>
+              <p>The market understands Shopify's tools support solopreneurs through to the world's most sophisticated brands. We cement our position as the engine of entrepreneurial growth.</p>
+            </div>
+            <div class="bet-scale">
+              <h4>Scale</h4>
+              <p>~14 earned placements · 6–8 briefings · ~12 shared/owned pieces · 2 speaking engagements · 8 merchant + partner stories</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BET 5 -->
+      <div class="bet-card">
+        <div class="bet-header">
+          <div class="bet-num" style="background:var(--bet5)">5</div>
+          <h3>Leverage data to demonstrate our impact</h3>
+        </div>
+        <div class="bet-body">
+          <div class="bet-plays">
+            <h4>Big plays</h4>
+            <ul>
+              <li>Economic impact report/data (TBC) — markets primed and ready to activate</li>
+              <li>Targeted product trend pitches — local market data for specific story angles (e.g. "little luxuries" in UK, price sensitivities in DE, cherry blossom season trends in JP)</li>
+              <li>Annual Merchant Survey (AI data) — explore external release of Sidekick usage, AI adoption stats, and merchant AI use-cases</li>
+              <li>Policy &amp; advocacy leverage — use proprietary data to shape EU and global debates on entrepreneurship, AI, and trade</li>
+            </ul>
+          </div>
+          <div class="bet-meta">
+            <div class="bet-success">
+              <h4>What success looks like</h4>
+              <p>Shopify's proprietary data shapes the commerce agenda. Media and policymakers see Shopify as the most credible lens on entrepreneurship at scale.</p>
+            </div>
+            <div class="bet-scale">
+              <h4>Scale</h4>
+              <p>~12 earned placements · ~12 shared/owned pieces</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CROSS-FUNCTIONAL -->
+  <div class="section">
+    <div class="section-label">Working cross-functionally</div>
+    <h2>How to collaborate with INTL Comms &amp; PA</h2>
+    <div class="xfn-grid">
+      <div class="xfn-card">
+        <h3>🛍 Merchant Stories</h3>
+        <ul>
+          <li>New significant merchant win or case study?</li>
+          <li>Unique story or milestone?</li>
+          <li>Merchant experiencing a viral boom?</li>
+        </ul>
+      </div>
+      <div class="xfn-card">
+        <h3>📊 Trends &amp; Insights</h3>
+        <ul>
+          <li>Interesting patterns or trends?</li>
+          <li>Conversations about broader industry topics?</li>
+          <li>Something everyone is talking about but us?</li>
+        </ul>
+      </div>
+      <div class="xfn-card">
+        <h3>🔧 Product Proof</h3>
+        <ul>
+          <li>Merchants raving about a new Editions launch?</li>
+          <li>Unique Sidekick use-cases?</li>
+          <li>Anyone laser-focused on the Agentic Commerce future?</li>
+        </ul>
+      </div>
+      <div class="xfn-card">
+        <h3>🏛 Policy &amp; Regulatory</h3>
+        <ul>
+          <li>Spotting regulatory risks or upcoming policy shifts?</li>
+          <li>Working with Product or Legal on positioning?</li>
+          <li>Opportunity to shape narrative before rules land?</li>
+          <li>Market access / international expansion?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  INTL Comms &amp; Public Affairs · H1 2026 · Last updated March 23, 2026
+</div>
+
+</body>
+</html>
