@@ -371,6 +371,133 @@
       left: 0;
     }
 
+    /* HERO TEAM AVATARS */
+    .hero-avatars {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+    }
+    .hero-avatar {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+    .hero-avatar img {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(255,255,255,0.25);
+      flex-shrink: 0;
+    }
+    .hero-avatar-text {
+      font-size: 13px;
+    }
+    .hero-avatar-text strong {
+      display: block;
+      color: rgba(255,255,255,0.85);
+      font-weight: 600;
+    }
+    .hero-avatar-text span {
+      color: rgba(255,255,255,0.45);
+      font-size: 11px;
+    }
+
+    /* TEAM SECTION */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 800px) { .team-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 500px) { .team-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    .team-card {
+      perspective: 900px;
+      height: 210px;
+      cursor: default;
+    }
+    .team-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .team-card:hover .team-card-inner {
+      transform: rotateY(180deg);
+    }
+    .team-front, .team-back {
+      position: absolute;
+      inset: 0;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .team-front {
+      background: var(--white);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 12px;
+      text-align: center;
+      transition: box-shadow 0.2s;
+    }
+    .team-card:hover .team-front {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .team-front img {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--bg);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    }
+    .team-front .tname {
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--text);
+    }
+    .team-front .tregion {
+      font-size: 19px;
+      line-height: 1;
+    }
+    .team-back {
+      background: var(--dark);
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 18px 16px;
+      gap: 6px;
+    }
+    .team-back .bname {
+      font-size: 13px;
+      font-weight: 700;
+      color: white;
+    }
+    .team-back .btitle {
+      font-size: 11px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.45;
+    }
+    .team-back .bfocus {
+      font-size: 11px;
+      color: var(--accent2);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+
     /* FOOTER */
     .footer {
       background: var(--dark2);
@@ -392,8 +519,27 @@
       <span>Last updated March 23, 2026</span>
       <span>H1 2026 Plan</span>
     </div>
-    <div class="hero-team">
-      <strong>Team:</strong> Alice Smith (APAC) &nbsp;·&nbsp; Dave Ross-Tomlin &amp; Pia Schratzenstaller (EMEA Comms) &nbsp;·&nbsp; Fabian Ladda-Henry (EMEA GA) &nbsp;·&nbsp; Kostas Rossoglou (EMEA &amp; APAC GA)
+    <div class="hero-avatars">
+      <div class="hero-avatar">
+        <img src="https://cdn.shopify.com/b/u2-files-production-bucket/ig6dmc3gbu27obgre4mjcbo4bknz.webp" alt="Kostas Rossoglou">
+        <div class="hero-avatar-text"><strong>Kostas Rossoglou</strong><span>🇧🇪 EMEA &amp; APAC GA</span></div>
+      </div>
+      <div class="hero-avatar">
+        <img src="https://cdn.shopify.com/b/u2-files-production-bucket/p7lwf2vjsr95g1wt30lfpvqllzn9.webp" alt="Pia Schratzenstaller">
+        <div class="hero-avatar-text"><strong>Pia Schratzenstaller</strong><span>🇩🇪 EMEA Comms</span></div>
+      </div>
+      <div class="hero-avatar">
+        <img src="https://cdn.shopify.com/b/u2-files-production-bucket/6q35rga5dgpwpbsjn264hy6ml9ti.png" alt="Dave Ross-Tomlin">
+        <div class="hero-avatar-text"><strong>Dave Ross-Tomlin</strong><span>🇬🇧 EMEA Comms</span></div>
+      </div>
+      <div class="hero-avatar">
+        <img src="https://cdn.shopify.com/b/u2-files-production-bucket/kxq0xt3w36q2qt4xrs26p1t3w8cq.webp" alt="Fabian Ladda-Henry">
+        <div class="hero-avatar-text"><strong>Fabian Ladda-Henry</strong><span>🇩🇪 EMEA GA</span></div>
+      </div>
+      <div class="hero-avatar">
+        <img src="https://cdn.shopify.com/b/u2-files-production-bucket/v3n6x9ot5b5lbrkzlw1dpt1xhe8p.png" alt="Alice Smith">
+        <div class="hero-avatar-text"><strong>Alice Smith</strong><span>🇦🇺 APAC Comms</span></div>
+      </div>
     </div>
   </div>
 </div>
@@ -406,7 +552,7 @@
     <div class="tldr-grid">
       <div class="tldr-item">
         <h3>Who</h3>
-        <p>Comms steers Shopify's story across earned, owned, shared, and paid channels across 7 international markets. GA drives policy engagement and reduces regulatory friction across the EU, UK, and key APAC markets.</p>
+        <p><strong>Comms:</strong> Steers Shopify's story across earned, owned, shared, and paid channels across 7 international markets.<br><br><strong>GA:</strong> Drives policy engagement and reduces regulatory friction across the EU, UK, and key APAC markets.</p>
       </div>
       <div class="tldr-item">
         <h3>What</h3>
@@ -416,6 +562,89 @@
         <h3>Why</h3>
         <p><strong>Comms:</strong> Cement Shopify's AI narrative, showcase product strength, and highlight merchant and partner impact in growth markets.<br><br><strong>GA:</strong> Europe is the most complex regulatory environment for digital commerce. Policy decisions in H1 2026 will determine whether merchants can scale efficiently.</p>
       </div>
+    </div>
+  </div>
+
+  <!-- THE TEAM -->
+  <div class="section">
+    <div class="section-label">The Team</div>
+    <div class="team-grid">
+
+      <div class="team-card">
+        <div class="team-card-inner">
+          <div class="team-front">
+            <img src="https://cdn.shopify.com/b/u2-files-production-bucket/ig6dmc3gbu27obgre4mjcbo4bknz.webp" alt="Kostas Rossoglou">
+            <div class="tname">Kostas Rossoglou</div>
+            <div class="tregion">🇧🇪</div>
+          </div>
+          <div class="team-back">
+            <div class="bname">Kostas Rossoglou</div>
+            <div class="btitle">Director, Communications &amp; Government Affairs</div>
+            <div class="bfocus">EMEA &amp; APAC GA · Strategy lead</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card-inner">
+          <div class="team-front">
+            <img src="https://cdn.shopify.com/b/u2-files-production-bucket/p7lwf2vjsr95g1wt30lfpvqllzn9.webp" alt="Pia Schratzenstaller">
+            <div class="tname">Pia Schratzenstaller</div>
+            <div class="tregion">🇩🇪</div>
+          </div>
+          <div class="team-back">
+            <div class="bname">Pia Schratzenstaller</div>
+            <div class="btitle">Senior Lead, Communications</div>
+            <div class="bfocus">EMEA Comms · DACH &amp; Nordics</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card-inner">
+          <div class="team-front">
+            <img src="https://cdn.shopify.com/b/u2-files-production-bucket/6q35rga5dgpwpbsjn264hy6ml9ti.png" alt="Dave Ross-Tomlin">
+            <div class="tname">Dave Ross-Tomlin</div>
+            <div class="tregion">🇬🇧</div>
+          </div>
+          <div class="team-back">
+            <div class="bname">Dave Ross-Tomlin</div>
+            <div class="btitle">Senior Lead, Communications</div>
+            <div class="bfocus">EMEA Comms · UK &amp; Southern Europe</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card-inner">
+          <div class="team-front">
+            <img src="https://cdn.shopify.com/b/u2-files-production-bucket/kxq0xt3w36q2qt4xrs26p1t3w8cq.webp" alt="Fabian Ladda-Henry">
+            <div class="tname">Fabian Ladda-Henry</div>
+            <div class="tregion">🇩🇪</div>
+          </div>
+          <div class="team-back">
+            <div class="bname">Fabian Ladda-Henry</div>
+            <div class="btitle">Senior Lead Associate, Government Affairs</div>
+            <div class="bfocus">EMEA GA · EU institutions &amp; policy</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card-inner">
+          <div class="team-front">
+            <img src="https://cdn.shopify.com/b/u2-files-production-bucket/v3n6x9ot5b5lbrkzlw1dpt1xhe8p.png" alt="Alice Smith">
+            <div class="tname">Alice Smith</div>
+            <div class="tregion">🇦🇺</div>
+          </div>
+          <div class="team-back">
+            <div class="bname">Alice Smith</div>
+            <div class="btitle">Lead, Communications</div>
+            <div class="bfocus">APAC Comms · AU, NZ &amp; Asia</div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
